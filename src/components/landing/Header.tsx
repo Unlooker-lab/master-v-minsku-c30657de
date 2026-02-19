@@ -91,10 +91,13 @@ export default function Header() {
               <Phone size={18} className="text-primary" /> {PHONE_DISPLAY}
             </a>
             <div className="flex gap-2">
-              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-whatsapp flex-1 !py-2 !px-3 !text-sm">
+              <a href={VIBER} className="btn-viber flex-1 !py-2 !px-2 !text-sm justify-center">
+                <ViberIcon /> Viber
+              </a>
+              <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-whatsapp flex-1 !py-2 !px-2 !text-sm">
                 <MessageCircle size={16} /> WhatsApp
               </a>
-              <a href={TELEGRAM} target="_blank" rel="noopener noreferrer" className="btn-telegram flex-1 !py-2 !px-3 !text-sm">
+              <a href={TELEGRAM} target="_blank" rel="noopener noreferrer" className="btn-telegram flex-1 !py-2 !px-2 !text-sm">
                 <Send size={16} /> Telegram
               </a>
             </div>
