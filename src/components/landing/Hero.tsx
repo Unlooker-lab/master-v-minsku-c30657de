@@ -5,6 +5,7 @@ const PHONE = "+375291234567";
 const PHONE_DISPLAY = "+375 (29) 123-45-67";
 const TELEGRAM = "https://t.me/masterpc_minsk";
 const WHATSAPP = "https://wa.me/375291234567";
+const VIBER = "viber://chat?number=%2B375291234567";
 
 const trustBadges = [
   { icon: Clock, text: "Выезд в день обращения" },
@@ -49,6 +50,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-2.5 mb-5">
             <a href={`tel:${PHONE}`} className="btn-primary text-center !py-3">
               <Phone size={20} /> Позвонить сейчас
+            </a>
+            <a href={VIBER} className="btn-viber text-center !py-3">
+              {/* Viber icon */}
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/>
+              </svg>
+              Viber
             </a>
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer" className="btn-whatsapp text-center !py-3">
               <MessageCircle size={20} /> WhatsApp
