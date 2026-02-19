@@ -137,6 +137,18 @@
     transform: translateY(-1px);
   }
 
+  .btn-viber {
+    @apply inline-flex items-center justify-center gap-2 font-bold rounded-xl px-7 py-4 text-lg transition-all duration-200;
+    background-color: hsl(270 60% 50%);
+    color: white;
+    box-shadow: 0 4px 16px hsl(270 60% 50% / 0.35);
+  }
+
+  .btn-viber:hover {
+    background-color: hsl(270 60% 44%);
+    transform: translateY(-1px);
+  }
+
   .btn-outline-white {
     @apply inline-flex items-center justify-center gap-2 font-bold rounded-xl px-7 py-4 text-lg transition-all duration-200 border-2;
     border-color: white;
