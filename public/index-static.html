@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ремонт компьютеров на выезде в Минске | МастерПК — частный мастер</title>
+  <meta name="description" content="Частный мастер по ремонту компьютеров и ноутбуков в Минске. Выезд на дом в день обращения. Диагностика, ремонт, установка Windows, апгрейд. Гарантия. +375 (29) 123-45-67" />
+  <meta name="keywords" content="ремонт компьютеров Минск, мастер по ремонту ноутбуков Минск, срочный ремонт ПК на выезде Минск, ремонт ноутбука на дому Минск, установка Windows Минск" />
+  <meta property="og:title" content="Ремонт компьютеров на выезде в Минске | МастерПК" />
+  <meta property="og:description" content="Частный мастер — выезд в день обращения. Ремонт ПК и ноутбуков, установка Windows, апгрейд. Гарантия на работу." />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: 213 85% 42%;
+      --primary-foreground: 0 0% 100%;
+      --primary-light: 213 85% 96%;
+      --primary-glow: 213 100% 60%;
+      --secondary: 165 60% 40%;
+      --secondary-foreground: 0 0% 100%;
+      --secondary-light: 165 60% 94%;
+      --foreground: 220 30% 12%;
+      --background: 210 20% 98%;
+      --card: 0 0% 100%;
+      --muted: 210 20% 94%;
+      --muted-foreground: 220 15% 46%;
+      --border: 214 20% 88%;
+      --destructive: 0 84.2% 60.2%;
+      --radius: 0.75rem;
+      --card-shadow: 0 4px 24px -4px hsl(213 85% 42% / 0.12);
+      --card-shadow-hover: 0 8px 32px -4px hsl(213 85% 42% / 0.22);
+      --section-alt: 213 30% 97%;
+    }
+
+    body {
+      font-family: 'Nunito Sans', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: hsl(var(--foreground));
+      background: hsl(var(--background));
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Nunito', system-ui, sans-serif;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    html { scroll-behavior: smooth; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; }
+    ul { list-style: none; }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* === SECTION ALT === */
+    .section-alt { background-color: hsl(var(--section-alt)); }
+
+    /* === GRADIENT TEXT === */
+    .gradient-text {
+      background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      border-radius: 0.75rem;
+      padding: 0.75rem 1.75rem;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary { background: hsl(var(--primary)); color: white; box-shadow: 0 4px 16px hsl(213 85% 42% / 0.35); }
+    .btn-primary:hover { background: hsl(var(--primary-glow)); }
+    .btn-whatsapp { background: hsl(142 70% 42%); color: white; box-shadow: 0 4px 16px hsl(142 70% 42% / 0.35); }
+    .btn-whatsapp:hover { background: hsl(142 70% 38%); }
+    .btn-telegram { background: hsl(200 85% 50%); color: white; box-shadow: 0 4px 16px hsl(200 85% 50% / 0.35); }
+    .btn-telegram:hover { background: hsl(200 85% 44%); }
+    .btn-viber { background: hsl(270 60% 50%); color: white; box-shadow: 0 4px 16px hsl(270 60% 50% / 0.35); }
+    .btn-viber:hover { background: hsl(270 60% 44%); }
+    .btn-outline-white { background: transparent; color: white; border: 2px solid white; }
+    .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
+
+    /* === CARD === */
+    .card {
+      background: hsl(var(--card));
+      border-radius: 1rem;
+      border: 1px solid hsl(var(--border));
+      box-shadow: var(--card-shadow);
+    }
+    .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
+
+    /* === TRUST BADGE === */
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      border-radius: 9999px;
+      padding: 0.375rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: hsl(var(--primary));
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    /* === STEP NUMBER === */
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: white;
+      background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    }
+
+    /* === FAQ === */
+    .faq-item {
+      background: hsl(var(--card));
+      border-radius: 1rem;
+      border: 1px solid hsl(var(--border));
+      overflow: hidden;
+      box-shadow: 0 2px 12px hsl(213 85% 42% / 0.06);
+    }
+    .faq-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.25rem;
+      text-align: left;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: hsl(var(--foreground));
+      transition: background 0.2s;
+    }
+    .faq-btn:hover { background: hsl(var(--muted) / 0.4); }
+    .faq-answer {
+      display: none;
+      padding: 0 1.25rem 1.25rem;
+      color: hsl(var(--muted-foreground));
+      font-size: 0.9rem;
+      line-height: 1.7;
+      border-top: 1px solid hsl(var(--border));
+      padding-top: 1rem;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-chevron { transition: transform 0.2s; color: hsl(var(--primary)); }
+
+    /* === FORM === */
+    .form-input {
+      width: 100%;
+      border-radius: 0.75rem;
+      border: 1px solid hsl(var(--border));
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-family: inherit;
+      color: hsl(var(--foreground));
+      background: hsl(var(--background));
+      transition: all 0.2s;
+      outline: none;
+    }
+    .form-input:focus {
+      border-color: hsl(var(--primary));
+      box-shadow: 0 0 0 3px hsl(213 85% 42% / 0.15);
+    }
+    .form-input.error { border-color: hsl(var(--destructive)); }
+    .error-text { color: hsl(var(--destructive)); font-size: 0.75rem; margin-top: 0.25rem; }
+    textarea.form-input { resize: none; }
+
+    /* === STICKY CTA === */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      display: flex;
+      box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+    }
+    .sticky-cta a {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    /* === HEADER === */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: hsl(var(--card));
+      border-bottom: 1px solid hsl(var(--border));
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+      gap: 1rem;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.5rem; }
+    .logo-icon {
+      width: 2.5rem; height: 2.5rem;
+      border-radius: 0.75rem;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.25rem;
+      background: linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%));
+    }
+    .logo-title { font-family: 'Nunito', sans-serif; font-weight: 900; color: hsl(var(--foreground)); font-size: 1rem; line-height: 1.2; }
+    .logo-sub { font-size: 0.7rem; color: hsl(var(--muted-foreground)); line-height: 1.2; }
+
+    .desktop-nav { display: flex; align-items: center; gap: 1.5rem; }
+    .desktop-nav a { color: hsl(var(--muted-foreground)); font-weight: 600; font-size: 0.875rem; transition: color 0.2s; }
+    .desktop-nav a:hover { color: hsl(var(--primary)); }
+
+    .header-cta { display: flex; align-items: center; gap: 0.75rem; }
+    .header-cta .btn { padding: 0.5rem 1rem; font-size: 0.875rem; }
+    .header-phone { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.875rem; color: hsl(var(--foreground)); transition: color 0.2s; }
+    .header-phone:hover { color: hsl(var(--primary)); }
+
+    .mobile-menu-btn {
+      display: none;
+      padding: 0.5rem;
+      border-radius: 0.75rem;
+      border: none;
+      background: none;
+      cursor: pointer;
+      color: hsl(var(--foreground));
+    }
+
+    .mobile-menu {
+      display: none;
+      border-top: 1px solid hsl(var(--border));
+      background: hsl(var(--card));
+      padding: 0.75rem 1rem 1rem;
+    }
+    .mobile-menu.open { display: block; }
+    .mobile-menu nav { display: flex; flex-direction: column; gap: 0.25rem; }
+    .mobile-menu nav a {
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      color: hsl(var(--foreground));
+      transition: background 0.2s;
+    }
+    .mobile-menu nav a:hover { background: hsl(var(--muted)); }
+    .mobile-menu-btns { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    .mobile-menu-btns .btn { flex: 1; padding: 0.5rem 0.5rem; font-size: 0.875rem; }
+
+    /* === ANIMATIONS === */
+    @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    .pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+    /* === GRIDS === */
+    .grid { display: grid; gap: 1.25rem; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .grid-4 { grid-template-columns: 1fr; }
+
+    /* === RESPONSIVE === */
+    @media (min-width: 640px) {
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .hero-btns { flex-direction: row; }
+    }
+
+    @media (min-width: 768px) {
+      .sticky-cta { display: none !important; }
+      .mobile-spacer { display: none; }
+      .header-cta { display: flex; }
+    }
+
+    @media (min-width: 1024px) {
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-4 { grid-template-columns: repeat(4, 1fr); }
+      .desktop-nav { display: flex; }
+      .mobile-menu-btn { display: none !important; }
+      .lg-grid-2 { grid-template-columns: repeat(2, 1fr); }
+      .lg-grid-3-2 { grid-template-columns: 2fr 1fr; }
+    }
+
+    @media (max-width: 1023px) {
+      .desktop-nav { display: none; }
+      .mobile-menu-btn { display: block; }
+    }
+
+    @media (max-width: 767px) {
+      .header-cta { display: none; }
+      .sticky-cta { display: flex; }
+    }
+
+    /* SVG icons inline */
+    .icon { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
+    .icon-sm { width: 1rem; height: 1rem; }
+    .icon-lg { width: 1.375rem; height: 1.375rem; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="header">
+  <div class="container header-inner">
+    <a href="#" class="logo-wrap">
+      <div class="logo-icon">💻</div>
+      <div>
+        <div class="logo-title">МастерПК</div>
+        <div class="logo-sub">Ремонт компьютеров Минск</div>
+      </div>
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="#services">Услуги</a>
+      <a href="#how-it-works">Как работаю</a>
+      <a href="#pricing">Цены</a>
+      <a href="#about">Обо мне</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+
+    <div class="header-cta">
+      <a href="tel:+375291234567" class="header-phone">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        +375 (29) 123-45-67
+      </a>
+      <a href="viber://chat?number=%2B375291234567" class="btn btn-viber" style="padding:.5rem 1rem;font-size:.875rem">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
+        Viber
+      </a>
+      <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="padding:.5rem 1rem;font-size:.875rem">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Telegram
+      </a>
+    </div>
+
+    <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Меню">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div id="mobileMenu" class="mobile-menu">
+    <nav>
+      <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Услуги</a>
+      <a href="#how-it-works" onclick="document.getElementById('mobileMenu').classList.remove('open')">Как работаю</a>
+      <a href="#pricing" onclick="document.getElementById('mobileMenu').classList.remove('open')">Цены</a>
+      <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">Обо мне</a>
+      <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Контакты</a>
+    </nav>
+    <a href="tel:+375291234567" class="header-phone" style="padding:.5rem .75rem;margin-top:.75rem;display:flex">
+      <svg class="icon" fill="none" stroke="hsl(213,85%,42%)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      +375 (29) 123-45-67
+    </a>
+    <div class="mobile-menu-btns">
+      <a href="viber://chat?number=%2B375291234567" class="btn btn-viber">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
+        Viber
+      </a>
+      <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" class="btn btn-telegram">
+        <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Telegram
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="hero" style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:flex-start">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg, hsl(213 85% 28% / 0.93), hsl(165 60% 24% / 0.87))"></div>
+
+  <div class="container" style="position:relative;z-index:10;padding-top:1.5rem;padding-bottom:5rem">
+    <div style="max-width:42rem">
+      <!-- Badge -->
+      <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:9999px;padding:.375rem 1rem;color:white;font-size:.875rem;font-weight:600;margin-bottom:1rem;backdrop-filter:blur(4px)">
+        <span style="width:.5rem;height:.5rem;border-radius:50%;background:#4ade80" class="pulse-soft"></span>
+        Принимаю заявки · Минск и пригород
+      </div>
+
+      <h1 style="font-size:clamp(1.875rem,5vw,3.75rem);color:white;margin-bottom:.75rem">
+        Ремонт компьютеров <br>
+        <span style="color:#86efac">на выезде в Минске</span>
+      </h1>
+
+      <p style="font-size:clamp(1.1rem,2.5vw,1.5rem);color:rgba(255,255,255,.85);margin-bottom:1.25rem;line-height:1.6">
+        Частный мастер приедет к вам домой или в офис. Диагностика, ремонт, настройка — быстро, честно, с гарантией.
+      </p>
+
+      <!-- CTA -->
+      <div class="hero-btns" style="display:flex;flex-direction:column;gap:.625rem;margin-bottom:1.25rem">
+        <a href="tel:+375291234567" class="btn btn-primary" style="padding:.75rem 1.5rem">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Позвонить сейчас
+        </a>
+        <a href="viber://chat?number=%2B375291234567" class="btn btn-viber" style="padding:.75rem 1.5rem">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
+          Viber
+        </a>
+        <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding:.75rem 1.5rem">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="padding:.75rem 1.5rem">
+          <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          Telegram
+        </a>
+      </div>
+
+      <!-- Phone large -->
+      <a href="tel:+375291234567" style="display:inline-block;color:white;font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(1.5rem,4vw,2.25rem);margin-bottom:1.25rem;transition:color .2s">
+        +375 (29) 123-45-67
+      </a>
+
+      <!-- Trust badges -->
+      <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+        <div class="trust-badge">🕐 Выезд в день обращения</div>
+        <div class="trust-badge">⭐ 500+ довольных клиентов</div>
+        <div class="trust-badge">🛡️ Гарантия на работу</div>
+        <div class="trust-badge">🔧 Честная диагностика</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave -->
+  <div style="position:absolute;bottom:0;left:0;right:0">
+    <svg viewBox="0 0 1440 60" fill="none" style="width:100%;display:block">
+      <path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="hsl(210 20% 98%)"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" style="padding:5rem 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span style="display:inline-block;background:hsl(var(--primary-light));color:hsl(var(--primary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Что я делаю</span>
+      <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);color:hsl(var(--foreground));margin-bottom:.75rem">Услуги мастера</h2>
+      <p style="font-size:1.1rem;color:hsl(var(--muted-foreground));max-width:36rem;margin:0 auto">Ремонт компьютеров и ноутбуков в Минске — качественно и с гарантией</p>
+    </div>
+
+    <div class="grid grid-4">
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%));color:white;border:none">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.2);font-size:1.5rem">⚡</div>
+        <h3 style="font-size:1.1rem;color:white">Срочный ремонт на выезде</h3>
+        <p style="font-size:.875rem;color:rgba(255,255,255,.85);line-height:1.6">Выезжаю в тот же день. Диагностирую и чаще всего устраняю неисправность прямо у вас дома или в офисе.</p>
+        <span style="margin-top:auto;background:rgba(255,255,255,.2);color:white;font-size:.75rem;font-weight:700;border-radius:9999px;padding:.25rem .75rem;width:fit-content">⚡ Срочный выезд</span>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">🖥️</div>
+        <h3 style="font-size:1.1rem">Ремонт компьютеров</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Замена и ремонт комплектующих, устранение неисправностей, восстановление работоспособности ПК.</p>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">💻</div>
+        <h3 style="font-size:1.1rem">Ремонт ноутбуков</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Замена экрана, клавиатуры, разъёмов, системы охлаждения. Ремонт материнских плат.</p>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">🔍</div>
+        <h3 style="font-size:1.1rem">Диагностика железа</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Полная диагностика всех компонентов. Честное заключение — без навязывания лишних замен.</p>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">💾</div>
+        <h3 style="font-size:1.1rem">Замена компонентов</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Замена жёстких дисков, блоков питания, видеокарт, матриц и других комплектующих.</p>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">🧩</div>
+        <h3 style="font-size:1.1rem">Апгрейд: RAM и SSD</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Установка оперативной памяти и SSD-дисков для ускорения вашего компьютера или ноутбука.</p>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">🖱️</div>
+        <h3 style="font-size:1.1rem">Сборка ПК под заказ</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Помогу выбрать комплектующие под бюджет и задачи, соберу, настрою и протестирую компьютер.</p>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
+        <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">⚙️</div>
+        <h3 style="font-size:1.1rem">Установка Windows</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Чистая установка Windows 10/11, все драйверы, базовое ПО и правильные настройки под ваши нужды.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE ME ===== -->
+<section id="why" class="section-alt" style="padding:5rem 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span style="display:inline-block;background:hsl(var(--secondary-light));color:hsl(var(--secondary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Почему выбирают меня</span>
+      <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:.75rem">Мастер рядом — надёжно и по-честному</h2>
+      <p style="font-size:1.1rem;color:hsl(var(--muted-foreground));max-width:36rem;margin:0 auto">Частный мастер — это личная ответственность за каждый заказ</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card card-hover" style="padding:1.5rem;display:flex;gap:1rem">
+        <div style="font-size:2.5rem;flex-shrink:0;line-height:1;margin-top:.25rem">🏠</div>
+        <div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Приеду к вам</h3>
+          <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Работаю на выезде по всему Минску и ближайшим пригородам. Никаких очередей и сервисных центров.</p>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;gap:1rem">
+        <div style="font-size:2.5rem;flex-shrink:0;line-height:1;margin-top:.25rem">⚡</div>
+        <div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Выезд в тот же день</h3>
+          <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Стараюсь выехать в течение нескольких часов после обращения. Срочные заявки — в приоритете.</p>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;gap:1rem">
+        <div style="font-size:2.5rem;flex-shrink:0;line-height:1;margin-top:.25rem">💬</div>
+        <div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Честная диагностика</h3>
+          <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Объясню что сломано простым языком. Не навязываю лишних услуг — говорю только то, что нужно реально.</p>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;gap:1rem">
+        <div style="font-size:2.5rem;flex-shrink:0;line-height:1;margin-top:.25rem">🛡️</div>
+        <div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Гарантия на работу</h3>
+          <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Даю письменную гарантию на все выполненные работы. Если что-то не так — устраню бесплатно.</p>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;gap:1rem">
+        <div style="font-size:2.5rem;flex-shrink:0;line-height:1;margin-top:.25rem">💰</div>
+        <div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Прозрачные цены</h3>
+          <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Называю стоимость до начала работ. Никаких скрытых доплат и 'а это ещё дополнительно'.</p>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;gap:1rem">
+        <div style="font-size:2.5rem;flex-shrink:0;line-height:1;margin-top:.25rem">👴</div>
+        <div>
+          <h3 style="font-size:1.1rem;margin-bottom:.5rem">Работаю с пожилыми</h3>
+          <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Объясню терпеливо и понятно. Помогу настроить всё что нужно — пошагово, без спешки.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="grid grid-4" style="margin-top:3rem">
+      <div class="card" style="padding:1.25rem;text-align:center">
+        <div class="gradient-text" style="font-size:1.875rem;font-family:'Nunito',sans-serif;font-weight:900;margin-bottom:.25rem">500+</div>
+        <div style="font-size:.875rem;color:hsl(var(--muted-foreground));font-weight:600">отремонтировано устройств</div>
+      </div>
+      <div class="card" style="padding:1.25rem;text-align:center">
+        <div class="gradient-text" style="font-size:1.875rem;font-family:'Nunito',sans-serif;font-weight:900;margin-bottom:.25rem">8+</div>
+        <div style="font-size:.875rem;color:hsl(var(--muted-foreground));font-weight:600">лет опыта в IT</div>
+      </div>
+      <div class="card" style="padding:1.25rem;text-align:center">
+        <div class="gradient-text" style="font-size:1.875rem;font-family:'Nunito',sans-serif;font-weight:900;margin-bottom:.25rem">95%</div>
+        <div style="font-size:.875rem;color:hsl(var(--muted-foreground));font-weight:600">клиентов возвращаются снова</div>
+      </div>
+      <div class="card" style="padding:1.25rem;text-align:center">
+        <div class="gradient-text" style="font-size:1.875rem;font-family:'Nunito',sans-serif;font-weight:900;margin-bottom:.25rem">1–2 ч</div>
+        <div style="font-size:.875rem;color:hsl(var(--muted-foreground));font-weight:600">среднее время ремонта на выезде</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section id="how-it-works" style="padding:5rem 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span style="display:inline-block;background:hsl(var(--primary-light));color:hsl(var(--primary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Процесс работы</span>
+      <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:.75rem">Как проходит ремонт</h2>
+      <p style="font-size:1.1rem;color:hsl(var(--muted-foreground));max-width:36rem;margin:0 auto">Просто, прозрачно и без лишних слов</p>
+    </div>
+
+    <div class="grid grid-4" style="text-align:center">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
+        <div class="step-number">1</div>
+        <div style="font-size:2.5rem">📞</div>
+        <h3 style="font-size:1.1rem">Позвоните или напишите</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Опишите проблему по телефону, в Telegram или WhatsApp. Я отвечу быстро и назначу удобное время.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
+        <div class="step-number">2</div>
+        <div style="font-size:2.5rem">🚗</div>
+        <h3 style="font-size:1.1rem">Мастер приедет к вам</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Приеду домой или в офис. Со всем необходимым инструментом и запасными частями.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
+        <div class="step-number">3</div>
+        <div style="font-size:2.5rem">🔍</div>
+        <h3 style="font-size:1.1rem">Диагностика и честная оценка</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Выявлю неисправность, объясню причину простым языком и назову точную стоимость до начала ремонта.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
+        <div class="step-number">4</div>
+        <div style="font-size:2.5rem">✅</div>
+        <h3 style="font-size:1.1rem">Ремонт и проверка</h3>
+        <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Устраняю проблему, тестирую результат. Даю гарантию и рекомендации по дальнейшей эксплуатации.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING ===== -->
+<section id="pricing" class="section-alt" style="padding:5rem 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span style="display:inline-block;background:hsl(var(--secondary-light));color:hsl(var(--secondary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Прайс-лист</span>
+      <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:.75rem">Цены на ремонт</h2>
+      <p style="font-size:1.1rem;color:hsl(var(--muted-foreground));max-width:36rem;margin:0 auto">Точная стоимость — после диагностики. Никаких скрытых доплат.</p>
+    </div>
+
+    <div style="display:grid;gap:2rem" class="lg-grid-3-2">
+      <!-- Table -->
+      <div class="card" style="overflow:hidden;padding:0">
+        <div style="overflow-x:auto">
+          <table style="width:100%;border-collapse:collapse">
+            <thead>
+              <tr style="background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">
+                <th style="text-align:left;padding:1rem;color:white;font-family:'Nunito',sans-serif;font-weight:700">Услуга</th>
+                <th style="text-align:right;padding:1rem;color:white;font-family:'Nunito',sans-serif;font-weight:700;white-space:nowrap">Стоимость</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:1rem"><strong>Диагностика компьютера / ноутбука</strong><br><small style="color:hsl(var(--muted-foreground))">При заказе ремонта — бесплатно</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 20 BYN</strong></td></tr>
+              <tr style="background:hsl(var(--muted)/.4)"><td style="padding:1rem"><strong>Установка Windows 10/11</strong><br><small style="color:hsl(var(--muted-foreground))">С драйверами и базовым ПО</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 40 BYN</strong></td></tr>
+              <tr><td style="padding:1rem"><strong>Чистка и замена термопасты</strong><br><small style="color:hsl(var(--muted-foreground))">Ноутбук / ПК</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 30 BYN</strong></td></tr>
+              <tr style="background:hsl(var(--muted)/.4)"><td style="padding:1rem"><strong>Установка SSD / HDD</strong><br><small style="color:hsl(var(--muted-foreground))">Без учёта стоимости накопителя</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 20 BYN</strong></td></tr>
+              <tr><td style="padding:1rem"><strong>Установка оперативной памяти</strong><br><small style="color:hsl(var(--muted-foreground))">Без учёта стоимости RAM</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 15 BYN</strong></td></tr>
+              <tr style="background:hsl(var(--muted)/.4)"><td style="padding:1rem"><strong>Замена экрана ноутбука</strong><br><small style="color:hsl(var(--muted-foreground))">Без учёта стоимости матрицы</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 50 BYN</strong></td></tr>
+              <tr><td style="padding:1rem"><strong>Ремонт разъёма питания</strong></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 40 BYN</strong></td></tr>
+              <tr style="background:hsl(var(--muted)/.4)"><td style="padding:1rem"><strong>Сборка ПК под заказ</strong><br><small style="color:hsl(var(--muted-foreground))">Консультация, сборка, настройка</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 60 BYN</strong></td></tr>
+              <tr><td style="padding:1rem"><strong>Выезд в пределах Минска</strong><br><small style="color:hsl(var(--muted-foreground))">При заказе ремонта</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">Бесплатно</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Side -->
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div class="card" style="padding:1.5rem">
+          <h3 style="font-size:1.25rem;margin-bottom:1rem">В каждый заказ входит:</h3>
+          <ul style="display:flex;flex-direction:column;gap:.75rem">
+            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.875rem">✅ Честная диагностика без скрытых платежей</li>
+            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.875rem">✅ Гарантия на все виды работ</li>
+            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.875rem">✅ Объяснение что и зачем делалось</li>
+            <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.875rem">✅ Рекомендации по эксплуатации</li>
+          </ul>
+        </div>
+        <div style="border-radius:1rem;padding:1.5rem;color:white;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">
+          <h3 style="font-size:1.25rem;margin-bottom:.5rem">Не знаете сколько стоит?</h3>
+          <p style="color:rgba(255,255,255,.85);font-size:.875rem;margin-bottom:1rem">Позвоните — опишите проблему, назову примерную стоимость сразу по телефону.</p>
+          <a href="tel:+375291234567" class="btn btn-outline-white" style="width:100%;justify-content:center">
+            📞 Позвонить
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials" style="padding:5rem 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span style="display:inline-block;background:hsl(var(--primary-light));color:hsl(var(--primary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Отзывы</span>
+      <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:.75rem">Что говорят клиенты</h2>
+      <p style="font-size:1.1rem;color:hsl(var(--muted-foreground))">500+ выполненных заказов в Минске</p>
+    </div>
+
+    <div class="grid grid-3">
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.875rem;line-height:1.6;flex:1">"Мастер приехал в тот же день! Не только починил компьютер, но и объяснил как не допустить проблем в будущем. Очень вежливый и терпеливый. Буду рекомендовать всем знакомым."</p>
+        <div style="display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid hsl(var(--border))">
+          <div style="width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.875rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">ОС</div>
+          <div><div style="font-weight:700;font-size:.875rem">Ольга Семёнова</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Пенсионерка, Советский р-н</div></div>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.875rem;line-height:1.6;flex:1">"Ноутбук перестал включаться. Мастер приехал за 2 часа, заменил разъём питания прямо у меня дома. Быстро, качественно, цена была озвучена заранее. Рекомендую!"</p>
+        <div style="display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid hsl(var(--border))">
+          <div style="width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.875rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">АП</div>
+          <div><div style="font-weight:700;font-size:.875rem">Александр Петров</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Менеджер, Центральный р-н</div></div>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.875rem;line-height:1.6;flex:1">"Поставил SSD и добавил оперативную память — компьютер теперь летает! Всё объяснил, показал разницу в скорости. Честный мастер, без навязывания лишнего."</p>
+        <div style="display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid hsl(var(--border))">
+          <div style="width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.875rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">ТК</div>
+          <div><div style="font-weight:700;font-size:.875rem">Татьяна Ковалёва</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Бухгалтер, Заводской р-н</div></div>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.875rem;line-height:1.6;flex:1">"Обращался по поводу рабочего компьютера. Мастер оперативно диагностировал неисправность, заменил блок питания. Минимальный простой бизнеса. Отличная работа!"</p>
+        <div style="display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid hsl(var(--border))">
+          <div style="width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.875rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">ВР</div>
+          <div><div style="font-weight:700;font-size:.875rem">Виктор Романов</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">ИП, Московский р-н</div></div>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.875rem;line-height:1.6;flex:1">"Переустановил Windows, настроил всё необходимое. Объяснил как пользоваться безопасно. Пришёл вовремя, убрал за собой. Очень довольна, поставила в телефон его номер навсегда."</p>
+        <div style="display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid hsl(var(--border))">
+          <div style="width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.875rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">НИ</div>
+          <div><div style="font-weight:700;font-size:.875rem">Наталья Иванова</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Домохозяйка, Фрунзенский р-н</div></div>
+        </div>
+      </div>
+      <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
+        <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
+        <p style="font-size:.875rem;line-height:1.6;flex:1">"Попросил собрать компьютер под игры и работу в рамках бюджета. Мастер грамотно подобрал комплектующие, собрал, всё протестировал. Компьютер работает отлично уже полгода."</p>
+        <div style="display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid hsl(var(--border))">
+          <div style="width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.875rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">ДС</div>
+          <div><div style="font-weight:700;font-size:.875rem">Дмитрий Сидоров</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Студент, Октябрьский р-н</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="section-alt" style="padding:5rem 0">
+  <div class="container">
+    <div style="display:grid;gap:3rem;align-items:center" class="lg-grid-2">
+      <!-- Photo placeholder -->
+      <div style="display:flex;justify-content:center">
+        <div style="position:relative">
+          <div style="width:18rem;height:18rem;border-radius:1.5rem;overflow:hidden;border:4px solid white;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);background:hsl(var(--muted));display:flex;align-items:center;justify-content:center;font-size:6rem">
+            👨‍💻
+          </div>
+          <div class="card" style="position:absolute;bottom:-1rem;right:-1rem;padding:1rem;box-shadow:0 20px 25px -5px rgba(0,0,0,.1)">
+            <div class="gradient-text" style="font-size:1.875rem;font-family:'Nunito',sans-serif;font-weight:900">8+</div>
+            <div style="font-size:.875rem;color:hsl(var(--muted-foreground));font-weight:600">лет опыта</div>
+          </div>
+          <div class="card" style="position:absolute;top:-1rem;left:-1rem;padding:1rem;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);display:flex;align-items:center;gap:.5rem">
+            <div style="width:.75rem;height:.75rem;border-radius:50%;background:#22c55e" class="pulse-soft"></div>
+            <span style="font-size:.875rem;font-weight:700">Принимаю заявки</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div>
+        <span style="display:inline-block;background:hsl(var(--primary-light));color:hsl(var(--primary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:1rem">О мастере</span>
+        <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:1rem">Привет, меня зовут Андрей</h2>
+        <p style="font-size:1.1rem;color:hsl(var(--muted-foreground));line-height:1.6;margin-bottom:1rem">
+          Я — частный мастер по ремонту компьютеров и ноутбуков в Минске. Занимаюсь этим уже более 8 лет. За это время отремонтировал сотни устройств и помог сотням клиентов.
+        </p>
+        <p style="color:hsl(var(--muted-foreground));line-height:1.6;margin-bottom:1.5rem">
+          Работаю честно и открыто: всегда объясняю что сломалось, почему и что нужно сделать. Не навязываю лишнего — только то, что реально нужно вашему устройству. Для меня важна репутация, поэтому каждый заказ выполняю как для себя.
+        </p>
+
+        <ul style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem">
+          <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Ремонт ПК и ноутбуков любой сложности</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Работа с техникой всех марок</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Сертифицированный IT-специалист</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Опыт работы 8+ лет</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Обслуживание частных клиентов и малого бизнеса</li>
+          <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Всегда на связи — отвечаю быстро</li>
+        </ul>
+
+        <div style="display:flex;flex-wrap:wrap;gap:1rem">
+          <div style="display:flex;align-items:center;gap:.5rem;color:hsl(var(--muted-foreground));font-size:.875rem">📍 Работаю по всему Минску и пригороду</div>
+          <div style="display:flex;align-items:center;gap:.5rem;color:hsl(var(--muted-foreground));font-size:.875rem">🕐 Пн–Вс, 8:00 – 21:00</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="padding:5rem 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span style="display:inline-block;background:hsl(var(--secondary-light));color:hsl(var(--secondary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Вопрос–Ответ</span>
+      <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:.75rem">Частые вопросы</h2>
+      <p style="font-size:1.1rem;color:hsl(var(--muted-foreground))">Не нашли ответа? Позвоните — отвечу на любой вопрос</p>
+    </div>
+
+    <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:.75rem">
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Сколько стоит выезд мастера?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Выезд по Минску при заказе ремонта — бесплатно. Стоимость диагностики включается в цену ремонта. Звоните — уточню детали по вашей ситуации.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Как быстро вы можете приехать?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Стараюсь выехать в тот же день. В большинстве случаев — в течение 2–4 часов после вашего звонка. Срочные заявки рассматриваются в первую очередь.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Что делать если сломался ноутбук и он не включается?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Позвоните или напишите мне. Опишите ситуацию — когда перестал включаться, что было до этого. Я смогу предварительно оценить возможные причины и приехать с нужными запчастями.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Даёте ли вы гарантию на ремонт?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Да, даю гарантию на все выполненные работы. Срок гарантии зависит от вида ремонта и составляет от 1 до 6 месяцев. Если проблема повторится — устраню бесплатно.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Работаете ли вы в выходные и по вечерам?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Да, работаю ежедневно с 8:00 до 21:00 включая субботу и воскресенье. Понимаю, что техника ломается не по расписанию.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Можно ли принести устройство самому?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Я специализируюсь на выездном ремонте и работаю у вас дома или в офисе. Это удобнее для вас и позволяет сэкономить время. Обсудите ситуацию по телефону — найдём удобное решение.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Какие районы Минска вы обслуживаете?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Работаю по всем районам Минска: Центральный, Советский, Первомайский, Партизанский, Заводской, Ленинский, Октябрьский, Фрунзенский, Московский. Также выезжаю в Минский район.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <button class="faq-btn"><span>Нужно ли мне разбираться в компьютерах?</span><span class="faq-chevron">▼</span></button>
+        <div class="faq-answer">Совершенно не нужно. Объясню всё доступным языком без технического жаргона. Расскажу что случилось, что я сделал и как это предотвратить в будущем.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section-alt" style="padding:5rem 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem">
+      <span style="display:inline-block;background:hsl(var(--primary-light));color:hsl(var(--primary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Связаться</span>
+      <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:.75rem">Оставьте заявку</h2>
+      <p style="font-size:1.1rem;color:hsl(var(--muted-foreground))">Перезвоню в течение 15 минут и согласую удобное время выезда</p>
+    </div>
+
+    <div style="display:grid;gap:2.5rem;max-width:64rem;margin:0 auto" class="lg-grid-2">
+      <!-- Form -->
+      <div class="card" style="padding:2rem">
+        <form id="contactForm" onsubmit="handleFormSubmit(event)" novalidate style="display:flex;flex-direction:column;gap:1.25rem">
+          <div>
+            <label style="display:block;font-size:.875rem;font-weight:700;margin-bottom:.375rem">Ваше имя *</label>
+            <input type="text" name="name" placeholder="Иван" maxlength="100" class="form-input" required />
+          </div>
+          <div>
+            <label style="display:block;font-size:.875rem;font-weight:700;margin-bottom:.375rem">Номер телефона *</label>
+            <input type="tel" name="phone" placeholder="+375 (29) 000-00-00" maxlength="20" class="form-input" required />
+          </div>
+          <div>
+            <label style="display:block;font-size:.875rem;font-weight:700;margin-bottom:.375rem">Опишите проблему *</label>
+            <textarea name="problem" placeholder="Например: ноутбук не включается, компьютер тормозит, нужно переустановить Windows..." rows="4" maxlength="1000" class="form-input" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%">Оставить заявку</button>
+          <p style="font-size:.75rem;color:hsl(var(--muted-foreground));text-align:center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
+        </form>
+        <div id="formSuccess" style="display:none;text-align:center;padding:2rem 0">
+          <div style="width:4rem;height:4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:hsl(var(--secondary-light));margin:0 auto 1rem;font-size:2rem">✅</div>
+          <h3 style="font-size:1.5rem;margin-bottom:.5rem">Заявка получена!</h3>
+          <p style="color:hsl(var(--muted-foreground))">Перезвоню вам в ближайшее время. Спасибо!</p>
+        </div>
+      </div>
+
+      <!-- Contact info -->
+      <div style="display:flex;flex-direction:column;gap:1.25rem">
+        <div class="card" style="padding:1.5rem">
+          <h3 style="font-size:1.25rem;margin-bottom:1rem">Или свяжитесь напрямую</h3>
+          <div style="display:flex;flex-direction:column;gap:.75rem">
+            <a href="tel:+375291234567" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
+              <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">📞</div>
+              <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">Телефон</div><div style="font-weight:700">+375 (29) 123-45-67</div></div>
+            </a>
+            <a href="viber://chat?number=%2B375291234567" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
+              <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(270 60% 92%);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="hsl(270 60% 44%)"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
+              </div>
+              <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">Viber</div><div style="font-weight:700">Написать в Viber</div></div>
+            </a>
+            <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
+              <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(142 70% 92%);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">💬</div>
+              <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">WhatsApp</div><div style="font-weight:700">Написать в WhatsApp</div></div>
+            </a>
+            <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
+              <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(200 85% 92%);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">✈️</div>
+              <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">Telegram</div><div style="font-weight:700">@masterpc_minsk</div></div>
+            </a>
+          </div>
+        </div>
+
+        <div style="border-radius:1rem;padding:1.5rem;color:white;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">
+          <div style="font-size:1.875rem;margin-bottom:.5rem">⏰</div>
+          <h3 style="font-size:1.25rem;margin-bottom:.25rem">Режим работы</h3>
+          <p style="color:rgba(255,255,255,.85);font-size:.875rem">Ежедневно с 8:00 до 21:00</p>
+          <p style="color:rgba(255,255,255,.85);font-size:.875rem">Включая выходные и праздники</p>
+          <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.2);display:flex;align-items:center;gap:.5rem">
+            <div style="width:.625rem;height:.625rem;border-radius:50%;background:#4ade80" class="pulse-soft"></div>
+            <span style="font-size:.875rem;font-weight:600">Сейчас принимаю заявки</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer style="background:hsl(var(--foreground));color:white;padding:3rem 0">
+  <div class="container">
+    <div style="display:grid;gap:2rem" class="grid-3">
+      <!-- Brand -->
+      <div>
+        <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+          <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;font-size:1.25rem;background:linear-gradient(135deg, hsl(213 85% 55%), hsl(165 60% 50%))">💻</div>
+          <div>
+            <div style="font-family:'Nunito',sans-serif;font-weight:900;font-size:1.1rem">МастерПК</div>
+            <div style="font-size:.7rem;color:rgba(255,255,255,.6)">Ремонт компьютеров Минск</div>
+          </div>
+        </div>
+        <p style="color:rgba(255,255,255,.7);font-size:.875rem;line-height:1.6">Частный мастер по ремонту компьютеров и ноутбуков в Минске. Выезд на дом и в офис. Честно, быстро, с гарантией.</p>
+        <div style="display:flex;gap:.75rem;margin-top:1rem">
+          <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" style="width:2.5rem;height:2.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;color:white;background:hsl(142 70% 42%)">💬</a>
+          <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" style="width:2.5rem;height:2.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;color:white;background:hsl(200 85% 50%)">✈️</a>
+        </div>
+      </div>
+
+      <!-- Nav -->
+      <div>
+        <h4 style="font-family:'Nunito',sans-serif;font-weight:700;margin-bottom:1rem">Навигация</h4>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">
+          <a href="#services" style="color:rgba(255,255,255,.7);font-size:.875rem;transition:color .2s">Услуги</a>
+          <a href="#why" style="color:rgba(255,255,255,.7);font-size:.875rem">Преимущества</a>
+          <a href="#how-it-works" style="color:rgba(255,255,255,.7);font-size:.875rem">Как работаю</a>
+          <a href="#pricing" style="color:rgba(255,255,255,.7);font-size:.875rem">Цены</a>
+          <a href="#testimonials" style="color:rgba(255,255,255,.7);font-size:.875rem">Отзывы</a>
+          <a href="#about" style="color:rgba(255,255,255,.7);font-size:.875rem">О мастере</a>
+          <a href="#faq" style="color:rgba(255,255,255,.7);font-size:.875rem">FAQ</a>
+          <a href="#contact" style="color:rgba(255,255,255,.7);font-size:.875rem">Контакты</a>
+        </div>
+      </div>
+
+      <!-- Contacts -->
+      <div>
+        <h4 style="font-family:'Nunito',sans-serif;font-weight:700;margin-bottom:1rem">Контакты</h4>
+        <div style="display:flex;flex-direction:column;gap:.75rem">
+          <a href="tel:+375291234567" style="display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.7);font-size:.875rem">📞 +375 (29) 123-45-67</a>
+          <div style="display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.7);font-size:.875rem">📍 Минск и Минский район</div>
+          <div style="display:flex;align-items:center;gap:.5rem;color:rgba(255,255,255,.7);font-size:.875rem">🕐 Ежедневно 8:00 – 21:00</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,.1);margin-top:2rem;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem">
+      <p style="color:rgba(255,255,255,.5);font-size:.75rem">© 2025 МастерПК — Ремонт компьютеров на выезде в Минске. Все права защищены.</p>
+      <p style="color:rgba(255,255,255,.4);font-size:.75rem">Ремонт компьютеров Минск · Мастер по ремонту ноутбуков Минск · Срочный ремонт ПК на выезде</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== STICKY MOBILE CTA ===== -->
+<div class="sticky-cta">
+  <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" style="background:hsl(142 70% 42%)">💬 WhatsApp</a>
+  <div style="width:1px;background:rgba(255,255,255,.2)"></div>
+  <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" style="background:hsl(200 85% 50%)">✈️ Telegram</a>
+</div>
+<div class="mobile-spacer" style="height:4rem"></div>
+
+<script>
+function handleFormSubmit(e) {
+  e.preventDefault();
+  var form = e.target;
+  var name = form.name.value.trim();
+  var phone = form.phone.value.trim();
+  var problem = form.problem.value.trim();
+  if (name.length < 2 || phone.replace(/\D/g,'').length < 7 || problem.length < 5) {
+    alert('Пожалуйста, заполните все поля корректно.');
+    return;
+  }
+  form.querySelector('button[type=submit]').textContent = 'Отправляю...';
+  form.querySelector('button[type=submit]').disabled = true;
+  setTimeout(function() {
+    form.style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }, 1200);
+}
+</script>
+
+</body>
+</html>
