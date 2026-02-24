@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+  <!-- ============================================================
+       META & SEO БЛОК
+       - charset: кодировка UTF-8 для кириллицы
+       - viewport: адаптивность на мобильных устройствах
+       - title: заголовок страницы для поисковиков (до 60 символов)
+       - description: мета-описание для выдачи Google/Яндекс (до 160 символов)
+       - keywords: ключевые слова для SEO (Минск, ремонт ПК)
+       - og:title/og:description: разметка Open Graph для соцсетей
+       - canonical: канонический URL (заполнить перед публикацией!)
+       ============================================================ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ремонт компьютеров на выезде в Минске | МастерПК — частный мастер</title>
@@ -9,32 +19,65 @@
   <meta property="og:title" content="Ремонт компьютеров на выезде в Минске | МастерПК" />
   <meta property="og:description" content="Частный мастер — выезд в день обращения. Ремонт ПК и ноутбуков, установка Windows, апгрейд. Гарантия на работу." />
   <meta property="og:type" content="website" />
+  <!-- TODO: Указать реальный URL сайта перед публикацией -->
   <link rel="canonical" href="" />
+
+  <!-- ============================================================
+       ШРИФТЫ
+       - Nunito: заголовки (жирный, округлый, дружелюбный)
+       - Nunito Sans: основной текст (читаемый, нейтральный)
+       - Подключение через Google Fonts CDN
+       ============================================================ -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- ============================================================
+       СТИЛИ (CSS)
+       Все стили встроены в файл для автономности.
+       Структура:
+       1. Сброс стилей и CSS-переменные (дизайн-токены)
+       2. Базовые стили (body, заголовки, ссылки)
+       3. Утилиты (.container, .section-alt, .gradient-text)
+       4. Компоненты (.btn, .card, .trust-badge, .step-number, .faq-item)
+       5. Форма (.form-input)
+       6. Sticky CTA бар (мобильная панель внизу)
+       7. Шапка (header) и мобильное меню
+       8. Анимации (@keyframes)
+       9. Сетка и адаптивность (@media)
+       ============================================================ -->
   <style>
+    /* --- 1. СБРОС СТИЛЕЙ И CSS-ПЕРЕМЕННЫЕ (ДИЗАЙН-ТОКЕНЫ) ---
+       Все цвета хранятся как HSL-значения в переменных.
+       Это позволяет легко менять палитру в одном месте.
+       --primary: синий (основной цвет бренда)
+       --secondary: бирюзовый/зелёный (акцент)
+       --foreground: тёмный текст
+       --background: светлый фон
+       --card-shadow: тень карточек
+    */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --primary: 213 85% 42%;
-      --primary-foreground: 0 0% 100%;
-      --primary-light: 213 85% 96%;
-      --primary-glow: 213 100% 60%;
-      --secondary: 165 60% 40%;
+      --primary: 213 85% 42%;           /* Основной синий */
+      --primary-foreground: 0 0% 100%;  /* Белый текст на синем фоне */
+      --primary-light: 213 85% 96%;     /* Светло-синий для бейджей */
+      --primary-glow: 213 100% 60%;     /* Яркий синий для hover-эффектов */
+      --secondary: 165 60% 40%;         /* Бирюзовый/зелёный акцент */
       --secondary-foreground: 0 0% 100%;
-      --secondary-light: 165 60% 94%;
-      --foreground: 220 30% 12%;
-      --background: 210 20% 98%;
-      --card: 0 0% 100%;
-      --muted: 210 20% 94%;
-      --muted-foreground: 220 15% 46%;
-      --border: 214 20% 88%;
-      --destructive: 0 84.2% 60.2%;
-      --radius: 0.75rem;
-      --card-shadow: 0 4px 24px -4px hsl(213 85% 42% / 0.12);
-      --card-shadow-hover: 0 8px 32px -4px hsl(213 85% 42% / 0.22);
-      --section-alt: 213 30% 97%;
+      --secondary-light: 165 60% 94%;   /* Светло-бирюзовый для бейджей */
+      --foreground: 220 30% 12%;        /* Цвет основного текста */
+      --background: 210 20% 98%;        /* Цвет фона страницы */
+      --card: 0 0% 100%;               /* Белый фон карточек */
+      --muted: 210 20% 94%;            /* Приглушённый фон */
+      --muted-foreground: 220 15% 46%; /* Цвет вторичного текста */
+      --border: 214 20% 88%;           /* Цвет рамок */
+      --destructive: 0 84.2% 60.2%;    /* Красный для ошибок */
+      --radius: 0.75rem;               /* Базовое скругление */
+      --card-shadow: 0 4px 24px -4px hsl(213 85% 42% / 0.12);       /* Тень карточки */
+      --card-shadow-hover: 0 8px 32px -4px hsl(213 85% 42% / 0.22); /* Тень при наведении */
+      --section-alt: 213 30% 97%;      /* Чередующийся фон секций */
     }
 
+    /* --- 2. БАЗОВЫЕ СТИЛИ --- */
     body {
       font-family: 'Nunito Sans', system-ui, sans-serif;
       font-size: 17px;
@@ -43,27 +86,31 @@
       background: hsl(var(--background));
     }
 
+    /* Заголовки: шрифт Nunito, жирность 800, компактный межстрочный */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Nunito', system-ui, sans-serif;
       font-weight: 800;
       line-height: 1.25;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; }  /* Плавная прокрутка при клике на якорные ссылки */
     a { text-decoration: none; color: inherit; }
     img { max-width: 100%; height: auto; }
     ul { list-style: none; }
 
+    /* --- 3. УТИЛИТЫ --- */
+
+    /* Контейнер: максимальная ширина 1200px с отступами по бокам */
     .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 1rem;
     }
 
-    /* === SECTION ALT === */
+    /* Чередующийся фон секций (чуть темнее основного) */
     .section-alt { background-color: hsl(var(--section-alt)); }
 
-    /* === GRADIENT TEXT === */
+    /* Градиентный текст: от синего к бирюзовому */
     .gradient-text {
       background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
       -webkit-background-clip: text;
@@ -71,7 +118,10 @@
       background-clip: text;
     }
 
-    /* === BUTTONS === */
+    /* --- 4. КНОПКИ ---
+       Все кнопки используют базовый класс .btn + модификатор цвета.
+       Эффект при наведении: подъём на 1px вверх (translateY).
+    */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -88,18 +138,30 @@
     }
     .btn:hover { transform: translateY(-1px); }
 
+    /* Кнопка "Позвонить" — основной синий цвет */
     .btn-primary { background: hsl(var(--primary)); color: white; box-shadow: 0 4px 16px hsl(213 85% 42% / 0.35); }
     .btn-primary:hover { background: hsl(var(--primary-glow)); }
+
+    /* Кнопка WhatsApp — зелёный */
     .btn-whatsapp { background: hsl(142 70% 42%); color: white; box-shadow: 0 4px 16px hsl(142 70% 42% / 0.35); }
     .btn-whatsapp:hover { background: hsl(142 70% 38%); }
+
+    /* Кнопка Telegram — голубой */
     .btn-telegram { background: hsl(200 85% 50%); color: white; box-shadow: 0 4px 16px hsl(200 85% 50% / 0.35); }
     .btn-telegram:hover { background: hsl(200 85% 44%); }
+
+    /* Кнопка Viber — фиолетовый */
     .btn-viber { background: hsl(270 60% 50%); color: white; box-shadow: 0 4px 16px hsl(270 60% 50% / 0.35); }
     .btn-viber:hover { background: hsl(270 60% 44%); }
+
+    /* Кнопка с белой обводкой (на тёмном фоне) */
     .btn-outline-white { background: transparent; color: white; border: 2px solid white; }
     .btn-outline-white:hover { background: rgba(255,255,255,0.15); }
 
-    /* === CARD === */
+    /* --- 5. КАРТОЧКИ ---
+       Белый фон, скругление 1rem, рамка, тень.
+       .card-hover: анимация подъёма при наведении.
+    */
     .card {
       background: hsl(var(--card));
       border-radius: 1rem;
@@ -109,7 +171,9 @@
     .card-hover { transition: transform 0.2s, box-shadow 0.2s; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: var(--card-shadow-hover); }
 
-    /* === TRUST BADGE === */
+    /* --- 6. БЕЙДЖ ДОВЕРИЯ ---
+       Белые пилюли с иконкой и текстом (в секции Hero).
+    */
     .trust-badge {
       display: inline-flex;
       align-items: center;
@@ -123,7 +187,9 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    /* === STEP NUMBER === */
+    /* --- 7. НОМЕР ШАГА (секция "Как работаю") ---
+       Круг с градиентом и номером внутри.
+    */
     .step-number {
       display: inline-flex;
       align-items: center;
@@ -137,7 +203,11 @@
       background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     }
 
-    /* === FAQ === */
+    /* --- 8. FAQ АККОРДЕОН ---
+       Каждый вопрос — блок .faq-item.
+       При клике добавляется класс .open → показывается ответ,
+       стрелка .faq-chevron поворачивается на 180°.
+    */
     .faq-item {
       background: hsl(var(--card));
       border-radius: 1rem;
@@ -164,7 +234,7 @@
     }
     .faq-btn:hover { background: hsl(var(--muted) / 0.4); }
     .faq-answer {
-      display: none;
+      display: none;  /* Скрыт по умолчанию */
       padding: 0 1.25rem 1.25rem;
       color: hsl(var(--muted-foreground));
       font-size: 0.9rem;
@@ -172,11 +242,14 @@
       border-top: 1px solid hsl(var(--border));
       padding-top: 1rem;
     }
-    .faq-item.open .faq-answer { display: block; }
-    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-item.open .faq-answer { display: block; }      /* Показать при открытии */
+    .faq-item.open .faq-chevron { transform: rotate(180deg); } /* Повернуть стрелку */
     .faq-chevron { transition: transform 0.2s; color: hsl(var(--primary)); }
 
-    /* === FORM === */
+    /* --- 9. ФОРМА ЗАЯВКИ ---
+       Поля ввода с фокус-эффектом (синяя рамка + тень).
+       Класс .error — красная рамка при ошибке валидации.
+    */
     .form-input {
       width: 100%;
       border-radius: 0.75rem;
@@ -197,7 +270,11 @@
     .error-text { color: hsl(var(--destructive)); font-size: 0.75rem; margin-top: 0.25rem; }
     textarea.form-input { resize: none; }
 
-    /* === STICKY CTA === */
+    /* --- 10. STICKY CTA БАР ---
+       Фиксированная панель внизу экрана (только мобильные).
+       Содержит кнопки WhatsApp и Telegram.
+       Скрывается на экранах ≥768px.
+    */
     .sticky-cta {
       position: fixed;
       bottom: 0;
@@ -219,7 +296,11 @@
       font-size: 1rem;
     }
 
-    /* === HEADER === */
+    /* --- 11. ШАПКА (HEADER) ---
+       Sticky-шапка: прилипает к верху при прокрутке.
+       На десктопе: логотип + навигация + кнопки CTA.
+       На мобильных: логотип + бургер-меню.
+    */
     .header {
       position: sticky;
       top: 0;
@@ -235,6 +316,8 @@
       padding: 0.75rem 0;
       gap: 1rem;
     }
+
+    /* Логотип: иконка + название + подзаголовок */
     .logo-wrap { display: flex; align-items: center; gap: 0.5rem; }
     .logo-icon {
       width: 2.5rem; height: 2.5rem;
@@ -246,15 +329,18 @@
     .logo-title { font-family: 'Nunito', sans-serif; font-weight: 900; color: hsl(var(--foreground)); font-size: 1rem; line-height: 1.2; }
     .logo-sub { font-size: 0.7rem; color: hsl(var(--muted-foreground)); line-height: 1.2; }
 
+    /* Десктопная навигация: горизонтальные ссылки */
     .desktop-nav { display: flex; align-items: center; gap: 1.5rem; }
     .desktop-nav a { color: hsl(var(--muted-foreground)); font-weight: 600; font-size: 0.875rem; transition: color 0.2s; }
     .desktop-nav a:hover { color: hsl(var(--primary)); }
 
+    /* CTA-кнопки в шапке: телефон + Viber + Telegram */
     .header-cta { display: flex; align-items: center; gap: 0.75rem; }
     .header-cta .btn { padding: 0.5rem 1rem; font-size: 0.875rem; }
     .header-phone { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.875rem; color: hsl(var(--foreground)); transition: color 0.2s; }
     .header-phone:hover { color: hsl(var(--primary)); }
 
+    /* Кнопка бургер-меню (мобильная, скрыта на десктопе) */
     .mobile-menu-btn {
       display: none;
       padding: 0.5rem;
@@ -265,13 +351,14 @@
       color: hsl(var(--foreground));
     }
 
+    /* Мобильное меню: выпадающий блок под шапкой */
     .mobile-menu {
       display: none;
       border-top: 1px solid hsl(var(--border));
       background: hsl(var(--card));
       padding: 0.75rem 1rem 1rem;
     }
-    .mobile-menu.open { display: block; }
+    .mobile-menu.open { display: block; }  /* Показать при нажатии бургера */
     .mobile-menu nav { display: flex; flex-direction: column; gap: 0.25rem; }
     .mobile-menu nav a {
       padding: 0.5rem 0.75rem;
@@ -281,52 +368,64 @@
       transition: background 0.2s;
     }
     .mobile-menu nav a:hover { background: hsl(var(--muted)); }
+
+    /* Кнопки мессенджеров в мобильном меню (Viber, WhatsApp, Telegram в ряд) */
     .mobile-menu-btns { display: flex; gap: 0.5rem; margin-top: 1rem; }
     .mobile-menu-btns .btn { flex: 1; padding: 0.5rem 0.5rem; font-size: 0.875rem; }
 
-    /* === ANIMATIONS === */
+    /* --- 12. АНИМАЦИИ --- */
+    /* Пульсация: мягкое мерцание зелёного индикатора "онлайн" */
     @keyframes pulse-soft { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
     .pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
 
-    /* === GRIDS === */
+    /* --- 13. СЕТКА (GRID) ---
+       Мобильная версия: всё в 1 колонку.
+       Адаптивные breakpoints: 640px, 768px, 1024px.
+    */
     .grid { display: grid; gap: 1.25rem; }
     .grid-2 { grid-template-columns: 1fr; }
     .grid-3 { grid-template-columns: 1fr; }
     .grid-4 { grid-template-columns: 1fr; }
 
-    /* === RESPONSIVE === */
+    /* --- 14. АДАПТИВНОСТЬ (MEDIA QUERIES) --- */
+
+    /* ≥640px (sm): 2 колонки, кнопки Hero в ряд */
     @media (min-width: 640px) {
       .grid-2 { grid-template-columns: repeat(2, 1fr); }
       .grid-4 { grid-template-columns: repeat(2, 1fr); }
       .hero-btns { flex-direction: row; }
     }
 
+    /* ≥768px (md): скрыть sticky CTA и мобильный отступ */
     @media (min-width: 768px) {
       .sticky-cta { display: none !important; }
       .mobile-spacer { display: none; }
       .header-cta { display: flex; }
     }
 
+    /* ≥1024px (lg): 3-4 колонки, десктопная навигация */
     @media (min-width: 1024px) {
       .grid-3 { grid-template-columns: repeat(3, 1fr); }
       .grid-4 { grid-template-columns: repeat(4, 1fr); }
       .desktop-nav { display: flex; }
       .mobile-menu-btn { display: none !important; }
       .lg-grid-2 { grid-template-columns: repeat(2, 1fr); }
-      .lg-grid-3-2 { grid-template-columns: 2fr 1fr; }
+      .lg-grid-3-2 { grid-template-columns: 2fr 1fr; } /* Прайс: таблица шире, боковая уже */
     }
 
+    /* <1024px: скрыть десктопную навигацию, показать бургер */
     @media (max-width: 1023px) {
       .desktop-nav { display: none; }
       .mobile-menu-btn { display: block; }
     }
 
+    /* <768px: скрыть CTA шапки, показать sticky CTA */
     @media (max-width: 767px) {
       .header-cta { display: none; }
       .sticky-cta { display: flex; }
     }
 
-    /* SVG icons inline */
+    /* Размеры SVG-иконок */
     .icon { width: 1.25rem; height: 1.25rem; flex-shrink: 0; }
     .icon-sm { width: 1rem; height: 1rem; }
     .icon-lg { width: 1.375rem; height: 1.375rem; }
@@ -334,9 +433,24 @@
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 1: ШАПКА (HEADER)
+     ================================================================
+     Sticky-шапка с логотипом, навигацией и CTA-кнопками.
+     
+     Структура:
+     - Логотип (💻 МастерПК)
+     - Десктопная навигация (5 ссылок на якоря секций)
+     - CTA: телефон + кнопки Viber/Telegram (только десктоп)
+     - Бургер-кнопка (только мобильные)
+     - Мобильное меню (раскрывается по клику на бургер)
+     
+     TODO: Заменить номер телефона и ссылки мессенджеров на реальные
+     ================================================================ -->
 <header class="header">
   <div class="container header-inner">
+
+    <!-- Логотип: эмодзи-иконка + название бренда -->
     <a href="#" class="logo-wrap">
       <div class="logo-icon">💻</div>
       <div>
@@ -345,6 +459,7 @@
       </div>
     </a>
 
+    <!-- Десктопная навигация: ссылки-якоря на секции страницы -->
     <nav class="desktop-nav">
       <a href="#services">Услуги</a>
       <a href="#how-it-works">Как работаю</a>
@@ -353,26 +468,36 @@
       <a href="#contact">Контакты</a>
     </nav>
 
+    <!-- CTA-блок в шапке (десктоп): телефон + Viber + Telegram -->
     <div class="header-cta">
+      <!-- Кликабельный номер телефона (tel: ссылка) -->
       <a href="tel:+375291234567" class="header-phone">
         <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         +375 (29) 123-45-67
       </a>
+
+      <!-- Кнопка Viber: deep link viber://chat -->
       <a href="viber://chat?number=%2B375291234567" class="btn btn-viber" style="padding:.5rem 1rem;font-size:.875rem">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
         Viber
       </a>
+
+      <!-- Кнопка Telegram: внешняя ссылка -->
       <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="padding:.5rem 1rem;font-size:.875rem">
         <svg class="icon-sm" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
         Telegram
       </a>
     </div>
 
+    <!-- Бургер-кнопка: видна только на мобильных (<1024px).
+         onclick переключает класс .open у мобильного меню. -->
     <button class="mobile-menu-btn" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Меню">
       <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
   </div>
 
+  <!-- Мобильное меню: раскрывается при клике на бургер.
+       При клике на ссылку — меню закрывается (classList.remove). -->
   <div id="mobileMenu" class="mobile-menu">
     <nav>
       <a href="#services" onclick="document.getElementById('mobileMenu').classList.remove('open')">Услуги</a>
@@ -381,10 +506,14 @@
       <a href="#about" onclick="document.getElementById('mobileMenu').classList.remove('open')">Обо мне</a>
       <a href="#contact" onclick="document.getElementById('mobileMenu').classList.remove('open')">Контакты</a>
     </nav>
+
+    <!-- Телефон в мобильном меню -->
     <a href="tel:+375291234567" class="header-phone" style="padding:.5rem .75rem;margin-top:.75rem;display:flex">
       <svg class="icon" fill="none" stroke="hsl(213,85%,42%)" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
       +375 (29) 123-45-67
     </a>
+
+    <!-- Кнопки мессенджеров в мобильном меню: 3 в ряд (flex-1) -->
     <div class="mobile-menu-btns">
       <a href="viber://chat?number=%2B375291234567" class="btn btn-viber">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
@@ -402,53 +531,80 @@
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 2: HERO (ГЛАВНЫЙ ЭКРАН)
+     ================================================================
+     Полноэкранный блок с градиентным фоном.
+     Содержит:
+     - Бейдж "Принимаю заявки" с пульсирующим индикатором
+     - Главный заголовок H1 (единственный на странице — SEO)
+     - Подзаголовок с описанием услуги
+     - 4 CTA-кнопки: Позвонить, Viber, WhatsApp, Telegram
+     - Крупный номер телефона (кликабельный)
+     - 4 бейджа доверия (выезд, клиенты, гарантия, диагностика)
+     - SVG-волна внизу для плавного перехода к следующей секции
+     
+     ПРИМЕЧАНИЕ: Фон — CSS-градиент. В React-версии используется
+     фоновое изображение hero-bg.jpg с наложением градиента.
+     ================================================================ -->
 <section id="hero" style="position:relative;overflow:hidden;min-height:100vh;display:flex;align-items:flex-start">
+  <!-- Градиентный фон поверх всей секции -->
   <div style="position:absolute;inset:0;background:linear-gradient(135deg, hsl(213 85% 28% / 0.93), hsl(165 60% 24% / 0.87))"></div>
 
   <div class="container" style="position:relative;z-index:10;padding-top:1.5rem;padding-bottom:5rem">
     <div style="max-width:42rem">
-      <!-- Badge -->
+
+      <!-- Бейдж статуса: зелёный пульсирующий индикатор + текст -->
       <div style="display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:9999px;padding:.375rem 1rem;color:white;font-size:.875rem;font-weight:600;margin-bottom:1rem;backdrop-filter:blur(4px)">
         <span style="width:.5rem;height:.5rem;border-radius:50%;background:#4ade80" class="pulse-soft"></span>
         Принимаю заявки · Минск и пригород
       </div>
 
+      <!-- H1 — единственный на странице (важно для SEO).
+           clamp() обеспечивает адаптивный размер шрифта. -->
       <h1 style="font-size:clamp(1.875rem,5vw,3.75rem);color:white;margin-bottom:.75rem">
         Ремонт компьютеров <br>
         <span style="color:#86efac">на выезде в Минске</span>
       </h1>
 
+      <!-- Подзаголовок: краткое описание услуги -->
       <p style="font-size:clamp(1.1rem,2.5vw,1.5rem);color:rgba(255,255,255,.85);margin-bottom:1.25rem;line-height:1.6">
         Частный мастер приедет к вам домой или в офис. Диагностика, ремонт, настройка — быстро, честно, с гарантией.
       </p>
 
-      <!-- CTA -->
+      <!-- CTA-кнопки: на мобильных — в колонку, на ≥640px — в ряд -->
       <div class="hero-btns" style="display:flex;flex-direction:column;gap:.625rem;margin-bottom:1.25rem">
+        <!-- Кнопка звонка: tel: ссылка -->
         <a href="tel:+375291234567" class="btn btn-primary" style="padding:.75rem 1.5rem">
           <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Позвонить сейчас
         </a>
+
+        <!-- Кнопка Viber: deep link -->
         <a href="viber://chat?number=%2B375291234567" class="btn btn-viber" style="padding:.75rem 1.5rem">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
           Viber
         </a>
+
+        <!-- Кнопка WhatsApp: wa.me ссылка (открывается в новой вкладке) -->
         <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding:.75rem 1.5rem">
           <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" stroke-linecap="round" stroke-linejoin="round"/></svg>
           WhatsApp
         </a>
+
+        <!-- Кнопка Telegram -->
         <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="padding:.75rem 1.5rem">
           <svg class="icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           Telegram
         </a>
       </div>
 
-      <!-- Phone large -->
+      <!-- Крупный номер телефона: кликабельный, адаптивный размер через clamp() -->
       <a href="tel:+375291234567" style="display:inline-block;color:white;font-family:'Nunito',sans-serif;font-weight:900;font-size:clamp(1.5rem,4vw,2.25rem);margin-bottom:1.25rem;transition:color .2s">
         +375 (29) 123-45-67
       </a>
 
-      <!-- Trust badges -->
+      <!-- Бейджи доверия: 4 белых пилюли с иконками -->
       <div style="display:flex;flex-wrap:wrap;gap:.5rem">
         <div class="trust-badge">🕐 Выезд в день обращения</div>
         <div class="trust-badge">⭐ 500+ довольных клиентов</div>
@@ -458,7 +614,8 @@
     </div>
   </div>
 
-  <!-- Wave -->
+  <!-- SVG-волна: декоративный разделитель между Hero и следующей секцией.
+       Цвет заливки совпадает с --background для плавного перехода. -->
   <div style="position:absolute;bottom:0;left:0;right:0">
     <svg viewBox="0 0 1440 60" fill="none" style="width:100%;display:block">
       <path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="hsl(210 20% 98%)"/>
@@ -466,9 +623,22 @@
   </div>
 </section>
 
-<!-- ===== SERVICES ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 3: УСЛУГИ (SERVICES)
+     ================================================================
+     Сетка из 8 карточек услуг (grid-4).
+     Первая карточка — акцентная (градиентный фон, белый текст).
+     Остальные — стандартные белые карточки с иконками-эмодзи.
+     
+     Каждая карточка содержит:
+     - Иконку (эмодзи в круглом контейнере)
+     - Название услуги (h3)
+     - Краткое описание
+     - (опционально) Бейдж "Срочный выезд"
+     ================================================================ -->
 <section id="services" style="padding:5rem 0">
   <div class="container">
+    <!-- Заголовок секции: бейдж + H2 + подзаголовок -->
     <div style="text-align:center;margin-bottom:3rem">
       <span style="display:inline-block;background:hsl(var(--primary-light));color:hsl(var(--primary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Что я делаю</span>
       <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);color:hsl(var(--foreground));margin-bottom:.75rem">Услуги мастера</h2>
@@ -476,12 +646,15 @@
     </div>
 
     <div class="grid grid-4">
+      <!-- Карточка 1: АКЦЕНТНАЯ (градиентный фон) — Срочный ремонт -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%));color:white;border:none">
         <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.2);font-size:1.5rem">⚡</div>
         <h3 style="font-size:1.1rem;color:white">Срочный ремонт на выезде</h3>
         <p style="font-size:.875rem;color:rgba(255,255,255,.85);line-height:1.6">Выезжаю в тот же день. Диагностирую и чаще всего устраняю неисправность прямо у вас дома или в офисе.</p>
         <span style="margin-top:auto;background:rgba(255,255,255,.2);color:white;font-size:.75rem;font-weight:700;border-radius:9999px;padding:.25rem .75rem;width:fit-content">⚡ Срочный выезд</span>
       </div>
+
+      <!-- Карточки 2-8: стандартные белые -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:.75rem">
         <div style="width:3rem;height:3rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;background:hsl(var(--primary-light));font-size:1.5rem">🖥️</div>
         <h3 style="font-size:1.1rem">Ремонт компьютеров</h3>
@@ -521,15 +694,24 @@
   </div>
 </section>
 
-<!-- ===== WHY CHOOSE ME ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 4: ПОЧЕМУ ВЫБИРАЮТ МЕНЯ (WHY CHOOSE ME)
+     ================================================================
+     Чередующийся фон (.section-alt).
+     Содержит:
+     - 6 карточек преимуществ (grid-3) с эмодзи + текст
+     - 4 карточки статистики (grid-4) с градиентными числами
+     ================================================================ -->
 <section id="why" class="section-alt" style="padding:5rem 0">
   <div class="container">
+    <!-- Заголовок секции -->
     <div style="text-align:center;margin-bottom:3rem">
       <span style="display:inline-block;background:hsl(var(--secondary-light));color:hsl(var(--secondary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:.75rem">Почему выбирают меня</span>
       <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:.75rem">Мастер рядом — надёжно и по-честному</h2>
       <p style="font-size:1.1rem;color:hsl(var(--muted-foreground));max-width:36rem;margin:0 auto">Частный мастер — это личная ответственность за каждый заказ</p>
     </div>
 
+    <!-- Карточки преимуществ: эмодзи слева + текст справа -->
     <div class="grid grid-3">
       <div class="card card-hover" style="padding:1.5rem;display:flex;gap:1rem">
         <div style="font-size:2.5rem;flex-shrink:0;line-height:1;margin-top:.25rem">🏠</div>
@@ -575,7 +757,7 @@
       </div>
     </div>
 
-    <!-- Stats -->
+    <!-- Блок статистики: 4 числовых показателя с градиентным текстом -->
     <div class="grid grid-4" style="margin-top:3rem">
       <div class="card" style="padding:1.25rem;text-align:center">
         <div class="gradient-text" style="font-size:1.875rem;font-family:'Nunito',sans-serif;font-weight:900;margin-bottom:.25rem">500+</div>
@@ -597,7 +779,13 @@
   </div>
 </section>
 
-<!-- ===== HOW IT WORKS ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 5: КАК ПРОХОДИТ РЕМОНТ (HOW IT WORKS)
+     ================================================================
+     4 шага процесса работы (grid-4).
+     Каждый шаг: номер в градиентном круге + эмодзи + заголовок + текст.
+     На десктопе все 4 шага в ряд, на мобильном — в столбец.
+     ================================================================ -->
 <section id="how-it-works" style="padding:5rem 0">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem">
@@ -607,24 +795,28 @@
     </div>
 
     <div class="grid grid-4" style="text-align:center">
+      <!-- Шаг 1: Звонок -->
       <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
         <div class="step-number">1</div>
         <div style="font-size:2.5rem">📞</div>
         <h3 style="font-size:1.1rem">Позвоните или напишите</h3>
         <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Опишите проблему по телефону, в Telegram или WhatsApp. Я отвечу быстро и назначу удобное время.</p>
       </div>
+      <!-- Шаг 2: Выезд -->
       <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
         <div class="step-number">2</div>
         <div style="font-size:2.5rem">🚗</div>
         <h3 style="font-size:1.1rem">Мастер приедет к вам</h3>
         <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Приеду домой или в офис. Со всем необходимым инструментом и запасными частями.</p>
       </div>
+      <!-- Шаг 3: Диагностика -->
       <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
         <div class="step-number">3</div>
         <div style="font-size:2.5rem">🔍</div>
         <h3 style="font-size:1.1rem">Диагностика и честная оценка</h3>
         <p style="font-size:.875rem;color:hsl(var(--muted-foreground));line-height:1.6">Выявлю неисправность, объясню причину простым языком и назову точную стоимость до начала ремонта.</p>
       </div>
+      <!-- Шаг 4: Ремонт -->
       <div style="display:flex;flex-direction:column;align-items:center;gap:1rem">
         <div class="step-number">4</div>
         <div style="font-size:2.5rem">✅</div>
@@ -635,7 +827,17 @@
   </div>
 </section>
 
-<!-- ===== PRICING ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 6: ЦЕНЫ (PRICING)
+     ================================================================
+     Чередующийся фон (.section-alt).
+     Двухколоночная раскладка (lg-grid-3-2):
+     - Левая колонка (2fr): таблица цен с градиентной шапкой
+     - Правая колонка (1fr): блок "В каждый заказ входит" + CTA
+     
+     Таблица: чередующиеся строки для читаемости.
+     Цены выделены цветом --primary.
+     ================================================================ -->
 <section id="pricing" class="section-alt" style="padding:5rem 0">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem">
@@ -645,16 +847,18 @@
     </div>
 
     <div style="display:grid;gap:2rem" class="lg-grid-3-2">
-      <!-- Table -->
+      <!-- Таблица цен -->
       <div class="card" style="overflow:hidden;padding:0">
         <div style="overflow-x:auto">
           <table style="width:100%;border-collapse:collapse">
+            <!-- Шапка таблицы: градиентный фон -->
             <thead>
               <tr style="background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">
                 <th style="text-align:left;padding:1rem;color:white;font-family:'Nunito',sans-serif;font-weight:700">Услуга</th>
                 <th style="text-align:right;padding:1rem;color:white;font-family:'Nunito',sans-serif;font-weight:700;white-space:nowrap">Стоимость</th>
               </tr>
             </thead>
+            <!-- Тело таблицы: чередующийся фон строк -->
             <tbody>
               <tr><td style="padding:1rem"><strong>Диагностика компьютера / ноутбука</strong><br><small style="color:hsl(var(--muted-foreground))">При заказе ремонта — бесплатно</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 20 BYN</strong></td></tr>
               <tr style="background:hsl(var(--muted)/.4)"><td style="padding:1rem"><strong>Установка Windows 10/11</strong><br><small style="color:hsl(var(--muted-foreground))">С драйверами и базовым ПО</small></td><td style="padding:1rem;text-align:right;white-space:nowrap"><strong style="color:hsl(var(--primary))">от 40 BYN</strong></td></tr>
@@ -670,8 +874,9 @@
         </div>
       </div>
 
-      <!-- Side -->
+      <!-- Боковая колонка: что входит в заказ + CTA -->
       <div style="display:flex;flex-direction:column;gap:1rem">
+        <!-- Чеклист включённого -->
         <div class="card" style="padding:1.5rem">
           <h3 style="font-size:1.25rem;margin-bottom:1rem">В каждый заказ входит:</h3>
           <ul style="display:flex;flex-direction:column;gap:.75rem">
@@ -681,6 +886,8 @@
             <li style="display:flex;align-items:flex-start;gap:.5rem;font-size:.875rem">✅ Рекомендации по эксплуатации</li>
           </ul>
         </div>
+
+        <!-- CTA-блок: градиентный фон + кнопка звонка -->
         <div style="border-radius:1rem;padding:1.5rem;color:white;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">
           <h3 style="font-size:1.25rem;margin-bottom:.5rem">Не знаете сколько стоит?</h3>
           <p style="color:rgba(255,255,255,.85);font-size:.875rem;margin-bottom:1rem">Позвоните — опишите проблему, назову примерную стоимость сразу по телефону.</p>
@@ -693,7 +900,15 @@
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 7: ОТЗЫВЫ (TESTIMONIALS)
+     ================================================================
+     6 карточек отзывов (grid-3).
+     Каждая карточка:
+     - 5 звёзд (эмодзи)
+     - Цитата клиента
+     - Аватар (инициалы в градиентном круге) + имя + профессия/район
+     ================================================================ -->
 <section id="testimonials" style="padding:5rem 0">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem">
@@ -703,14 +918,17 @@
     </div>
 
     <div class="grid grid-3">
+      <!-- Отзыв 1 -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
         <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
         <p style="font-size:.875rem;line-height:1.6;flex:1">"Мастер приехал в тот же день! Не только починил компьютер, но и объяснил как не допустить проблем в будущем. Очень вежливый и терпеливый. Буду рекомендовать всем знакомым."</p>
+        <!-- Автор отзыва: инициалы в круге + имя -->
         <div style="display:flex;align-items:center;gap:.75rem;padding-top:.75rem;border-top:1px solid hsl(var(--border))">
           <div style="width:2.5rem;height:2.5rem;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:.875rem;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">ОС</div>
           <div><div style="font-weight:700;font-size:.875rem">Ольга Семёнова</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Пенсионерка, Советский р-н</div></div>
         </div>
       </div>
+      <!-- Отзыв 2 -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
         <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
         <p style="font-size:.875rem;line-height:1.6;flex:1">"Ноутбук перестал включаться. Мастер приехал за 2 часа, заменил разъём питания прямо у меня дома. Быстро, качественно, цена была озвучена заранее. Рекомендую!"</p>
@@ -719,6 +937,7 @@
           <div><div style="font-weight:700;font-size:.875rem">Александр Петров</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Менеджер, Центральный р-н</div></div>
         </div>
       </div>
+      <!-- Отзыв 3 -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
         <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
         <p style="font-size:.875rem;line-height:1.6;flex:1">"Поставил SSD и добавил оперативную память — компьютер теперь летает! Всё объяснил, показал разницу в скорости. Честный мастер, без навязывания лишнего."</p>
@@ -727,6 +946,7 @@
           <div><div style="font-weight:700;font-size:.875rem">Татьяна Ковалёва</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Бухгалтер, Заводской р-н</div></div>
         </div>
       </div>
+      <!-- Отзыв 4 -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
         <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
         <p style="font-size:.875rem;line-height:1.6;flex:1">"Обращался по поводу рабочего компьютера. Мастер оперативно диагностировал неисправность, заменил блок питания. Минимальный простой бизнеса. Отличная работа!"</p>
@@ -735,6 +955,7 @@
           <div><div style="font-weight:700;font-size:.875rem">Виктор Романов</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">ИП, Московский р-н</div></div>
         </div>
       </div>
+      <!-- Отзыв 5 -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
         <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
         <p style="font-size:.875rem;line-height:1.6;flex:1">"Переустановил Windows, настроил всё необходимое. Объяснил как пользоваться безопасно. Пришёл вовремя, убрал за собой. Очень довольна, поставила в телефон его номер навсегда."</p>
@@ -743,6 +964,7 @@
           <div><div style="font-weight:700;font-size:.875rem">Наталья Иванова</div><div style="font-size:.75rem;color:hsl(var(--muted-foreground))">Домохозяйка, Фрунзенский р-н</div></div>
         </div>
       </div>
+      <!-- Отзыв 6 -->
       <div class="card card-hover" style="padding:1.5rem;display:flex;flex-direction:column;gap:1rem">
         <div style="color:#facc15">⭐⭐⭐⭐⭐</div>
         <p style="font-size:.875rem;line-height:1.6;flex:1">"Попросил собрать компьютер под игры и работу в рамках бюджета. Мастер грамотно подобрал комплектующие, собрал, всё протестировал. Компьютер работает отлично уже полгода."</p>
@@ -755,20 +977,33 @@
   </div>
 </section>
 
-<!-- ===== ABOUT ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 8: О МАСТЕРЕ (ABOUT)
+     ================================================================
+     Чередующийся фон (.section-alt).
+     Двухколоночная раскладка (lg-grid-2):
+     - Левая колонка: фото-заглушка (эмодзи 👨‍💻) + 2 плавающих карточки
+       (опыт "8+" и статус "Принимаю заявки")
+     - Правая колонка: текст о мастере + чеклист навыков + инфо
+     
+     TODO: Заменить эмодзи-заглушку на реальное фото мастера.
+     ================================================================ -->
 <section id="about" class="section-alt" style="padding:5rem 0">
   <div class="container">
     <div style="display:grid;gap:3rem;align-items:center" class="lg-grid-2">
-      <!-- Photo placeholder -->
+      <!-- Фото-блок с декоративными карточками -->
       <div style="display:flex;justify-content:center">
         <div style="position:relative">
+          <!-- Заглушка фото (заменить на <img>) -->
           <div style="width:18rem;height:18rem;border-radius:1.5rem;overflow:hidden;border:4px solid white;box-shadow:0 25px 50px -12px rgba(0,0,0,.25);background:hsl(var(--muted));display:flex;align-items:center;justify-content:center;font-size:6rem">
             👨‍💻
           </div>
+          <!-- Плавающая карточка: опыт работы (снизу-справа) -->
           <div class="card" style="position:absolute;bottom:-1rem;right:-1rem;padding:1rem;box-shadow:0 20px 25px -5px rgba(0,0,0,.1)">
             <div class="gradient-text" style="font-size:1.875rem;font-family:'Nunito',sans-serif;font-weight:900">8+</div>
             <div style="font-size:.875rem;color:hsl(var(--muted-foreground));font-weight:600">лет опыта</div>
           </div>
+          <!-- Плавающая карточка: статус (сверху-слева) -->
           <div class="card" style="position:absolute;top:-1rem;left:-1rem;padding:1rem;box-shadow:0 20px 25px -5px rgba(0,0,0,.1);display:flex;align-items:center;gap:.5rem">
             <div style="width:.75rem;height:.75rem;border-radius:50%;background:#22c55e" class="pulse-soft"></div>
             <span style="font-size:.875rem;font-weight:700">Принимаю заявки</span>
@@ -776,9 +1011,10 @@
         </div>
       </div>
 
-      <!-- Content -->
+      <!-- Текстовый контент -->
       <div>
         <span style="display:inline-block;background:hsl(var(--primary-light));color:hsl(var(--primary));font-weight:700;border-radius:9999px;padding:.25rem 1rem;font-size:.875rem;margin-bottom:1rem">О мастере</span>
+        <!-- TODO: Заменить имя на реальное -->
         <h2 style="font-size:clamp(1.875rem,3vw,2.25rem);margin-bottom:1rem">Привет, меня зовут Андрей</h2>
         <p style="font-size:1.1rem;color:hsl(var(--muted-foreground));line-height:1.6;margin-bottom:1rem">
           Я — частный мастер по ремонту компьютеров и ноутбуков в Минске. Занимаюсь этим уже более 8 лет. За это время отремонтировал сотни устройств и помог сотням клиентов.
@@ -787,6 +1023,7 @@
           Работаю честно и открыто: всегда объясняю что сломалось, почему и что нужно сделать. Не навязываю лишнего — только то, что реально нужно вашему устройству. Для меня важна репутация, поэтому каждый заказ выполняю как для себя.
         </p>
 
+        <!-- Чеклист компетенций -->
         <ul style="display:flex;flex-direction:column;gap:.75rem;margin-bottom:1.5rem">
           <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Ремонт ПК и ноутбуков любой сложности</li>
           <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Работа с техникой всех марок</li>
@@ -796,6 +1033,7 @@
           <li style="display:flex;align-items:center;gap:.75rem;font-weight:600">✅ Всегда на связи — отвечаю быстро</li>
         </ul>
 
+        <!-- Геолокация и график работы -->
         <div style="display:flex;flex-wrap:wrap;gap:1rem">
           <div style="display:flex;align-items:center;gap:.5rem;color:hsl(var(--muted-foreground));font-size:.875rem">📍 Работаю по всему Минску и пригороду</div>
           <div style="display:flex;align-items:center;gap:.5rem;color:hsl(var(--muted-foreground));font-size:.875rem">🕐 Пн–Вс, 8:00 – 21:00</div>
@@ -805,7 +1043,16 @@
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 9: FAQ (ЧАСТЫЕ ВОПРОСЫ)
+     ================================================================
+     8 вопросов-ответов в формате аккордеона.
+     Логика: при клике на .faq-item переключается класс .open,
+     который показывает/скрывает .faq-answer и поворачивает стрелку.
+     
+     Реализовано через onclick="this.classList.toggle('open')"
+     без дополнительного JavaScript.
+     ================================================================ -->
 <section id="faq" style="padding:5rem 0">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem">
@@ -815,34 +1062,42 @@
     </div>
 
     <div style="max-width:48rem;margin:0 auto;display:flex;flex-direction:column;gap:.75rem">
+      <!-- Вопрос 1 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Сколько стоит выезд мастера?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Выезд по Минску при заказе ремонта — бесплатно. Стоимость диагностики включается в цену ремонта. Звоните — уточню детали по вашей ситуации.</div>
       </div>
+      <!-- Вопрос 2 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Как быстро вы можете приехать?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Стараюсь выехать в тот же день. В большинстве случаев — в течение 2–4 часов после вашего звонка. Срочные заявки рассматриваются в первую очередь.</div>
       </div>
+      <!-- Вопрос 3 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Что делать если сломался ноутбук и он не включается?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Позвоните или напишите мне. Опишите ситуацию — когда перестал включаться, что было до этого. Я смогу предварительно оценить возможные причины и приехать с нужными запчастями.</div>
       </div>
+      <!-- Вопрос 4 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Даёте ли вы гарантию на ремонт?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Да, даю гарантию на все выполненные работы. Срок гарантии зависит от вида ремонта и составляет от 1 до 6 месяцев. Если проблема повторится — устраню бесплатно.</div>
       </div>
+      <!-- Вопрос 5 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Работаете ли вы в выходные и по вечерам?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Да, работаю ежедневно с 8:00 до 21:00 включая субботу и воскресенье. Понимаю, что техника ломается не по расписанию.</div>
       </div>
+      <!-- Вопрос 6 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Можно ли принести устройство самому?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Я специализируюсь на выездном ремонте и работаю у вас дома или в офисе. Это удобнее для вас и позволяет сэкономить время. Обсудите ситуацию по телефону — найдём удобное решение.</div>
       </div>
+      <!-- Вопрос 7 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Какие районы Минска вы обслуживаете?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Работаю по всем районам Минска: Центральный, Советский, Первомайский, Партизанский, Заводской, Ленинский, Октябрьский, Фрунзенский, Московский. Также выезжаю в Минский район.</div>
       </div>
+      <!-- Вопрос 8 -->
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <button class="faq-btn"><span>Нужно ли мне разбираться в компьютерах?</span><span class="faq-chevron">▼</span></button>
         <div class="faq-answer">Совершенно не нужно. Объясню всё доступным языком без технического жаргона. Расскажу что случилось, что я сделал и как это предотвратить в будущем.</div>
@@ -851,7 +1106,23 @@
   </div>
 </section>
 
-<!-- ===== CONTACT ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 10: КОНТАКТЫ / ФОРМА ЗАЯВКИ (CONTACT)
+     ================================================================
+     Чередующийся фон (.section-alt).
+     Двухколоночная раскладка (lg-grid-2):
+     
+     ЛЕВАЯ КОЛОНКА — Форма заявки:
+     - 3 поля: имя, телефон, описание проблемы
+     - Кнопка отправки
+     - Блок успешной отправки (скрыт по умолчанию)
+     - Валидация: минимальная длина полей
+     - TODO: Подключить реальную отправку (Telegram Bot API, email и т.д.)
+     
+     ПРАВАЯ КОЛОНКА — Контактная информация:
+     - Карточки связи: телефон, Viber, WhatsApp, Telegram
+     - Блок "Режим работы" с градиентным фоном
+     ================================================================ -->
 <section id="contact" class="section-alt" style="padding:5rem 0">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem">
@@ -861,24 +1132,33 @@
     </div>
 
     <div style="display:grid;gap:2.5rem;max-width:64rem;margin:0 auto" class="lg-grid-2">
-      <!-- Form -->
+
+      <!-- ФОРМА ЗАЯВКИ -->
       <div class="card" style="padding:2rem">
+        <!-- Форма: novalidate отключает браузерную валидацию, используем свою в JS -->
         <form id="contactForm" onsubmit="handleFormSubmit(event)" novalidate style="display:flex;flex-direction:column;gap:1.25rem">
+          <!-- Поле: Имя -->
           <div>
             <label style="display:block;font-size:.875rem;font-weight:700;margin-bottom:.375rem">Ваше имя *</label>
             <input type="text" name="name" placeholder="Иван" maxlength="100" class="form-input" required />
           </div>
+          <!-- Поле: Телефон -->
           <div>
             <label style="display:block;font-size:.875rem;font-weight:700;margin-bottom:.375rem">Номер телефона *</label>
             <input type="tel" name="phone" placeholder="+375 (29) 000-00-00" maxlength="20" class="form-input" required />
           </div>
+          <!-- Поле: Описание проблемы -->
           <div>
             <label style="display:block;font-size:.875rem;font-weight:700;margin-bottom:.375rem">Опишите проблему *</label>
             <textarea name="problem" placeholder="Например: ноутбук не включается, компьютер тормозит, нужно переустановить Windows..." rows="4" maxlength="1000" class="form-input" required></textarea>
           </div>
+          <!-- Кнопка отправки -->
           <button type="submit" class="btn btn-primary" style="width:100%">Оставить заявку</button>
+          <!-- Согласие на обработку данных -->
           <p style="font-size:.75rem;color:hsl(var(--muted-foreground));text-align:center">Нажимая кнопку, вы соглашаетесь на обработку персональных данных</p>
         </form>
+
+        <!-- Блок успешной отправки: показывается после submit (скрыт по умолчанию) -->
         <div id="formSuccess" style="display:none;text-align:center;padding:2rem 0">
           <div style="width:4rem;height:4rem;border-radius:50%;display:flex;align-items:center;justify-content:center;background:hsl(var(--secondary-light));margin:0 auto 1rem;font-size:2rem">✅</div>
           <h3 style="font-size:1.5rem;margin-bottom:.5rem">Заявка получена!</h3>
@@ -886,25 +1166,33 @@
         </div>
       </div>
 
-      <!-- Contact info -->
+      <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ -->
       <div style="display:flex;flex-direction:column;gap:1.25rem">
         <div class="card" style="padding:1.5rem">
           <h3 style="font-size:1.25rem;margin-bottom:1rem">Или свяжитесь напрямую</h3>
           <div style="display:flex;flex-direction:column;gap:.75rem">
+
+            <!-- Карточка: Телефон (tel: ссылка) -->
             <a href="tel:+375291234567" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
               <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(var(--primary-light));display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">📞</div>
               <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">Телефон</div><div style="font-weight:700">+375 (29) 123-45-67</div></div>
             </a>
+
+            <!-- Карточка: Viber (deep link) -->
             <a href="viber://chat?number=%2B375291234567" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
               <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(270 60% 92%);display:flex;align-items:center;justify-content:center;flex-shrink:0">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="hsl(270 60% 44%)"><path d="M11.4 0C5.6.3 1.2 4.8.9 10.6c-.2 3.1.6 6 2.4 8.3L2 24l5.3-1.4c1.9 1 4 1.6 6.2 1.6h.1c6.2 0 11.4-5 11.4-11.2C25 6.8 19.8 1.6 13.6.3 12.9.1 12.1 0 11.4 0zm.1 2.2c5 0 9.1 4.1 9.1 9.1 0 5-4.1 9.1-9.1 9.1-1.9 0-3.7-.6-5.2-1.6l-.4-.2-3.1.8.8-3-.3-.4C2.3 14.6 1.7 13 1.7 11.3c0-5 4.1-9.1 9.1-9.1h.7zm-2 3.3c-.2 0-.5.1-.7.4-.5.5-1.5 1.4-1.5 3.4s1.6 4 1.8 4.2c.2.3 3 4.7 7.3 6.4 1 .4 1.8.6 2.4.8.9.3 1.8.3 2.4.1.7-.2 2.2-.9 2.5-1.8.3-.9.3-1.6.2-1.8-.1-.1-.3-.2-.7-.4-.4-.2-2.1-1-2.4-1.1-.3-.1-.6-.2-.8.2-.2.4-.9 1.1-1.1 1.3-.2.2-.4.3-.8.1s-1.6-.6-3-1.9c-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.8.2-.2.4-.4.6-.7.2-.3.1-.5 0-.7-.1-.2-.8-1.9-1.1-2.6-.3-.6-.5-.5-.7-.5h-.6z"/></svg>
               </div>
               <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">Viber</div><div style="font-weight:700">Написать в Viber</div></div>
             </a>
+
+            <!-- Карточка: WhatsApp (wa.me ссылка) -->
             <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
               <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(142 70% 92%);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">💬</div>
               <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">WhatsApp</div><div style="font-weight:700">Написать в WhatsApp</div></div>
             </a>
+
+            <!-- Карточка: Telegram (внешняя ссылка) -->
             <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" style="display:flex;align-items:center;gap:.75rem;padding:1rem;border-radius:.75rem;border:1px solid hsl(var(--border));transition:background .2s">
               <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;background:hsl(200 85% 92%);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.25rem">✈️</div>
               <div><div style="font-size:.75rem;color:hsl(var(--muted-foreground));font-weight:600">Telegram</div><div style="font-weight:700">@masterpc_minsk</div></div>
@@ -912,6 +1200,7 @@
           </div>
         </div>
 
+        <!-- Блок "Режим работы": градиентный фон + пульсирующий индикатор -->
         <div style="border-radius:1rem;padding:1.5rem;color:white;background:linear-gradient(135deg, hsl(213 85% 42%), hsl(165 60% 40%))">
           <div style="font-size:1.875rem;margin-bottom:.5rem">⏰</div>
           <h3 style="font-size:1.25rem;margin-bottom:.25rem">Режим работы</h3>
@@ -927,11 +1216,20 @@
   </div>
 </section>
 
-<!-- ===== FOOTER ===== -->
+<!-- ================================================================
+     СЕКЦИЯ 11: ПОДВАЛ (FOOTER)
+     ================================================================
+     Тёмный фон (--foreground).
+     Трёхколоночная раскладка (grid-3):
+     - Колонка 1: Бренд + описание + иконки соцсетей
+     - Колонка 2: Навигация (8 ссылок в 2 столбца)
+     - Колонка 3: Контакты (телефон, адрес, график)
+     - Нижняя строка: копирайт + SEO-текст
+     ================================================================ -->
 <footer style="background:hsl(var(--foreground));color:white;padding:3rem 0">
   <div class="container">
     <div style="display:grid;gap:2rem" class="grid-3">
-      <!-- Brand -->
+      <!-- Колонка 1: Бренд -->
       <div>
         <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
           <div style="width:2.5rem;height:2.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;font-size:1.25rem;background:linear-gradient(135deg, hsl(213 85% 55%), hsl(165 60% 50%))">💻</div>
@@ -941,13 +1239,14 @@
           </div>
         </div>
         <p style="color:rgba(255,255,255,.7);font-size:.875rem;line-height:1.6">Частный мастер по ремонту компьютеров и ноутбуков в Минске. Выезд на дом и в офис. Честно, быстро, с гарантией.</p>
+        <!-- Иконки соцсетей -->
         <div style="display:flex;gap:.75rem;margin-top:1rem">
           <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" style="width:2.5rem;height:2.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;color:white;background:hsl(142 70% 42%)">💬</a>
           <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" style="width:2.5rem;height:2.5rem;border-radius:.75rem;display:flex;align-items:center;justify-content:center;color:white;background:hsl(200 85% 50%)">✈️</a>
         </div>
       </div>
 
-      <!-- Nav -->
+      <!-- Колонка 2: Навигация -->
       <div>
         <h4 style="font-family:'Nunito',sans-serif;font-weight:700;margin-bottom:1rem">Навигация</h4>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">
@@ -962,7 +1261,7 @@
         </div>
       </div>
 
-      <!-- Contacts -->
+      <!-- Колонка 3: Контакты -->
       <div>
         <h4 style="font-family:'Nunito',sans-serif;font-weight:700;margin-bottom:1rem">Контакты</h4>
         <div style="display:flex;flex-direction:column;gap:.75rem">
@@ -973,21 +1272,51 @@
       </div>
     </div>
 
+    <!-- Нижняя строка: копирайт + SEO-ключевые слова -->
     <div style="border-top:1px solid rgba(255,255,255,.1);margin-top:2rem;padding-top:1.5rem;display:flex;flex-wrap:wrap;justify-content:space-between;gap:.75rem">
       <p style="color:rgba(255,255,255,.5);font-size:.75rem">© 2025 МастерПК — Ремонт компьютеров на выезде в Минске. Все права защищены.</p>
+      <!-- SEO-строка: дополнительные ключевые слова для поисковиков -->
       <p style="color:rgba(255,255,255,.4);font-size:.75rem">Ремонт компьютеров Минск · Мастер по ремонту ноутбуков Минск · Срочный ремонт ПК на выезде</p>
     </div>
   </div>
 </footer>
 
-<!-- ===== STICKY MOBILE CTA ===== -->
+<!-- ================================================================
+     STICKY MOBILE CTA БАР
+     ================================================================
+     Фиксированная панель внизу экрана.
+     Видна ТОЛЬКО на мобильных (<768px).
+     Содержит 2 кнопки: WhatsApp (зелёный) и Telegram (голубой).
+     .mobile-spacer: отступ внизу контента чтобы footer не перекрывался.
+     ================================================================ -->
 <div class="sticky-cta">
   <a href="https://wa.me/375291234567" target="_blank" rel="noopener noreferrer" style="background:hsl(142 70% 42%)">💬 WhatsApp</a>
   <div style="width:1px;background:rgba(255,255,255,.2)"></div>
   <a href="https://t.me/masterpc_minsk" target="_blank" rel="noopener noreferrer" style="background:hsl(200 85% 50%)">✈️ Telegram</a>
 </div>
+<!-- Отступ внизу для мобильных, чтобы контент не скрывался за sticky CTA -->
 <div class="mobile-spacer" style="height:4rem"></div>
 
+<!-- ================================================================
+     JAVASCRIPT
+     ================================================================
+     Единственный скрипт на странице: обработка формы заявки.
+     
+     handleFormSubmit():
+     1. Предотвращает стандартную отправку формы (e.preventDefault)
+     2. Валидирует поля:
+        - Имя: минимум 2 символа
+        - Телефон: минимум 7 цифр (после удаления нецифровых символов)
+        - Проблема: минимум 5 символов
+     3. При ошибке — показывает alert
+     4. При успехе — имитирует отправку (1.2 сек задержка),
+        затем скрывает форму и показывает блок #formSuccess
+     
+     TODO: Заменить setTimeout на реальную отправку данных:
+     - Вариант 1: fetch() на backend API
+     - Вариант 2: Отправка в Telegram через Bot API
+     - Вариант 3: Отправка на email через сервис (FormSubmit, EmailJS)
+     ================================================================ -->
 <script>
 function handleFormSubmit(e) {
   e.preventDefault();
@@ -995,12 +1324,19 @@ function handleFormSubmit(e) {
   var name = form.name.value.trim();
   var phone = form.phone.value.trim();
   var problem = form.problem.value.trim();
+
+  // Валидация полей
   if (name.length < 2 || phone.replace(/\D/g,'').length < 7 || problem.length < 5) {
     alert('Пожалуйста, заполните все поля корректно.');
     return;
   }
+
+  // Имитация отправки: меняем текст кнопки и блокируем её
   form.querySelector('button[type=submit]').textContent = 'Отправляю...';
   form.querySelector('button[type=submit]').disabled = true;
+
+  // Через 1.2 сек показываем успешный результат
+  // TODO: Заменить на реальный fetch() запрос
   setTimeout(function() {
     form.style.display = 'none';
     document.getElementById('formSuccess').style.display = 'block';
